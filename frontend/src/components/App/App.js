@@ -29,12 +29,12 @@ export default function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Navbar />
-      <Home items={items}/>
-      <Routes>
-      {/* <Route path="/transactions/:transactionId" element={<TransactionDetail />} /> */}
-      <Route path="/item/:itemID" element={<ItemDetail />} />
-      </Routes>
+        <Navbar />
+
+        <Routes>
+          <Route path="/" element={<Home items={items}/>} />
+          <Route path="/item/:itemID" element={<ItemDetail />} />
+        </Routes>
       </BrowserRouter>
     </div>
      

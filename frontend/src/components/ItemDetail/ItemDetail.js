@@ -6,7 +6,7 @@ import "./ItemDetail.css"
 
 export default function ItemDetail() {
 
-  const { itemId } = useParams();
+  const { itemID } = useParams();
   const [item, setItem] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -14,11 +14,9 @@ export default function ItemDetail() {
   useEffect(() => {
     const fetchItemById = async () => {
         try {
-            setIsLoading(true)
-            const res = await axios.get("http://localhost:3001/items/list/"+itemId);
-            //console.log(res.data.transaction)
+            console.log({itemID})
+            const res = await axios.get(`http://localhost:3001/items/list/${itemID}`);
             if (res?.data?.item) {
-                console.log("made it here")
                 console.log(res.data.item)
                 setItem(res.data.item);
                 // console.log(item.price)
@@ -32,7 +30,7 @@ export default function ItemDetail() {
     //console.log(transaction)
     setIsLoading(false)
     fetchItemById();
-  }, [itemId]);
+  }, [itemID]);
 
   const renderTransactionContent = () => {
     if (isLoading) return <h1>Loading...</h1>
@@ -40,9 +38,9 @@ export default function ItemDetail() {
 
     return (
       <>
-        <p className="description">hello</p>
+        <p className="description">{item?.description}</p>
         <div className="meta">
-          <p >hello</p>
+          <p >{item?.price}</p>
         </div>
       </>
     )

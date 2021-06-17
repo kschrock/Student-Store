@@ -17,7 +17,6 @@ export default function StoreItems({ items }){
     const classes = useStyles();
     return (
 <div className="StoreItems">
-<Typography variant="h1" align="center">Current Items</Typography>
     <Grid
       container
       spacing={3}
@@ -25,8 +24,9 @@ export default function StoreItems({ items }){
       justify="center"
     >
         {items.map((itemData) => (
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={4} key={itemData.id}>
           <Card 
+          key={itemData.id}
           description={itemData.description}
           image={itemData.image}
           price={itemData.price}
