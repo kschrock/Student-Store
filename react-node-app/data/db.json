@@ -49,14 +49,6 @@
       "description": "It weighs 1.5 ounces (43 g) and includes chocolate, caramel and crisped rice.",
       "price": 1,
       "quantity": 100
-    },
-    {
-      "id": 6,
-      "name": "New Item",
-      "category": "food",
-      "description": "This is a new item posting",
-      "price": 110,
-      "quantity": 100
     }
   ]
 }
