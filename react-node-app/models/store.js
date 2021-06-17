@@ -23,7 +23,7 @@ class Store {
         if (!item) {
             throw new BadRequestError(`No item sent.`)
         }
-        const requiredFields = ["name", "category", "description", "price"]
+        const requiredFields = ["name", "category", "description", "price", "quantity"]
         requiredFields.forEach((field) => {
             if (!item[field] && item[field] !== 0) {
             throw new BadRequestError(`Field: "${field}" is required in transaction`)
