@@ -51,14 +51,13 @@ export default function OutlinedCard({id, name, category, price, image, descript
         <Typography className={classes.pos} color="textSecondary">
         <span className="col x2">{category}</span>
         </Typography>
-        <Typography variant="body2" component="p">
-        <span className="col x2">{description}</span>
-          <br />
-        </Typography>
       </CardContent>
       </CardActionArea>
       <CardActions>
-      <Button variant="contained" color="primary"size="small">Add to Cart  <AddShoppingCartIcon /></Button>
+      <Button variant="contained" color="primary"size="small"
+      >Add to Cart 
+      <AddShoppingCartIcon />
+      </Button>
         <Typography variant="h5" align="center">{formatAmount(price)} USD</Typography>
       </CardActions>
     </Card>

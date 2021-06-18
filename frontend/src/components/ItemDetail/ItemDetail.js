@@ -44,7 +44,7 @@ export default function ItemDetail() {
 
   return (
     <div className="ItemDetail">
-      <div className="card">
+      <div className="card disabled">
         <div className="title">
           <h3>{item?.name}</h3>
           <div id = "container">

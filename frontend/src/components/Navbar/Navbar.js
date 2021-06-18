@@ -18,14 +18,13 @@ export default function Navbar() {
       </div>
 
       <div className="user">
-        <div className="notifications">
           <i className="material-icons md-36">Welcome</i>
-        </div>
-        
       </div>
       <div>
+      <div className="notifications">
         <ShoppingCartIcon />
-        <span>0</span>
+        <span>&nbsp;0</span>
+      </div>
       </div>
     </nav>
     
