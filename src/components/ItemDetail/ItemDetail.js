@@ -14,7 +14,7 @@ export default function ItemDetail() {
   useEffect(() => {
     const fetchItemById = async () => {
         try {
-            const res = await axios.get(`${process.env.REACT_APP_REMOTE_HOST_URL}/items/list/${itemID}`);
+            const res = await axios.get(`https://student-store-codepath.herokuapp.com/items/list/${itemID}`);
             if (res?.data?.item) {
                 setItem(res.data.item);
             }

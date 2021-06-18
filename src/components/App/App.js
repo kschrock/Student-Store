@@ -15,7 +15,7 @@ export default function App() {
   useEffect(() => {
     const fetchData = async () => {
        setIsFetching(true)
-       const res = await axios.get(`${process.env.REACT_APP_REMOTE_HOST_URL}/items/list`);
+       const res = await axios.get(`https://student-store-codepath.herokuapp.com/items/list`);
       if (res?.data?.items) {
         setItems(res.data.items);
         //get the list of items
