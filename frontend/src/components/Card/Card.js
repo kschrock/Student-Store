@@ -10,7 +10,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import { formatAmount } from "../../utils/format";
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import { Link } from "react-router-dom";
-
+import "./Card.css"
 const useStyles = makeStyles({
   root: {
     minWidth: 200
@@ -37,7 +37,7 @@ export default function OutlinedCard({id, name, category, price, image, descript
   
   return (
       
-    <Card className={classes.root} variant="outlined">
+    <Card className="card" variant="outlined">
         <CardActionArea component={Link} to={`/item/${id}`}>
         <CardMedia
           className={classes.media}
@@ -59,7 +59,7 @@ export default function OutlinedCard({id, name, category, price, image, descript
       </CardActionArea>
       <CardActions>
       <Button variant="contained" color="primary"size="small">Add to Cart  <AddShoppingCartIcon /></Button>
-        <Typography variant="h5" align="center">{formatAmount(price)}</Typography>
+        <Typography variant="h5" align="center">{formatAmount(price)} USD</Typography>
       </CardActions>
     </Card>
   );

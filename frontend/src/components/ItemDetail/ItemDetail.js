@@ -14,12 +14,9 @@ export default function ItemDetail() {
   useEffect(() => {
     const fetchItemById = async () => {
         try {
-            console.log({itemID})
             const res = await axios.get(`http://localhost:3001/items/list/${itemID}`);
             if (res?.data?.item) {
-                console.log(res.data.item)
                 setItem(res.data.item);
-                // console.log(item.price)
             }
             
         } catch (error) {
@@ -27,7 +24,6 @@ export default function ItemDetail() {
             setIsLoading(false)
         }
     }
-    //console.log(transaction)
     setIsLoading(false)
     fetchItemById();
   }, [itemID]);

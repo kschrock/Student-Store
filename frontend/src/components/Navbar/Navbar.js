@@ -3,6 +3,7 @@ import FilterInput from "../FilterInput/FilterInput"
 import codepath from "../../assets/codepath.svg"
 import avatar from "../../assets/avatar.png"
 import "./Navbar.css"
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 export default function Navbar() {
   return ( 
@@ -21,6 +22,10 @@ export default function Navbar() {
           <i className="material-icons md-36">Welcome</i>
         </div>
         
+      </div>
+      <div>
+        <ShoppingCartIcon />
+        <span>0</span>
       </div>
     </nav>
     

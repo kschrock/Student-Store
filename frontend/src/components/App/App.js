@@ -15,7 +15,6 @@ export default function App() {
     const fetchData = async () => {
        setIsFetching(true)
        const res = await axios.get("http://localhost:3001/items/list");
-       console.log(res.data.items)
       if (res?.data?.items) {
         setItems(res.data.items);
         //get the list of items
@@ -25,7 +24,6 @@ export default function App() {
 
     fetchData();
   }, []);
-  //console.log(transactions)
   return (
     <div className="App">
       <BrowserRouter>
