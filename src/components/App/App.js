@@ -7,17 +7,20 @@ import ItemDetail from "../ItemDetail/ItemDetail"
 import Checkout from "../Checkout/Checkout"
 import "./App.css"
 
+export const URL = process.env.REACT_APP_REMOTE_HOST_URL || "http://localhost:3001"
+
 export default function App() {
+
    const [isFetching, setIsFetching] = useState(false);
-  // const [filterInputValue, setFilterInputValue] = useState(0);
    const [items, setItems] = useState([]);
-  // const [transfers, setTransfers] = useState([]);
+   const [cart, setCart] = useState([]);
+
   useEffect(() => {
-    console.log("https://student-store-codepath.herokuapp.com/items/list")
+
     const fetchData = async () => {
        setIsFetching(true)
-       const res = await axios.get(`https://student-store-codepath.herokuapp.com/items/list`);
-       console.log(res)
+       const res = await axios.get(`${URL}/items/list`);
+       //console.log(res)
       if (res?.data?.items) {
         setItems(res.data.items);
         //get the list of items
@@ -27,13 +30,33 @@ export default function App() {
 
     fetchData();
   }, []);
+
+  const sendData = async (id) => {
+    await axios.post(`${URL}/items/addToCart/${id}/1`);
+   }
+   
+
+  const test = (data) => {
+      //pass down
+      console.log("Hello world : " + data)
+  }
+
+  const add = (data) => {
+    //pass down
+    console.log("Hello world : " + data)
+    sendData(data)
+}
+
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar />
 
         <Routes>
-          <Route path="/" element={<Home items={items}/>} />
+          <Route path="/" element={<Home 
+          add={add}
+          test={test}
+          items={items}/>} />
           <Route path="/item/:itemID" element={<ItemDetail />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>

@@ -3,10 +3,17 @@
 import "./Home.css"
 import StoreItems from "../StoreItems/StoreItems"
 
-export default function Home({items}) {
+
+export default function Home({items , test, add}) {
+  const handler = () => {
+    //pass down
+   test("Made it here.")
+}
+
   return (
     <div className="Home">
-      <StoreItems items={items} />
+      <StoreItems items={items} add={add}/>
+      {/* <button onClick={handler}>Click Here</button> */}
       {/* <AddTransaction />
       <BankActivity /> */}
     </div>

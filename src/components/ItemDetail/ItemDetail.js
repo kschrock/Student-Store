@@ -4,6 +4,8 @@ import { useEffect, useState  } from "react"
 import { useParams } from "react-router"
 import "./ItemDetail.css"
 import { formatAmount } from "../../utils/format"
+import { URL } from "../App/App.js"
+
 export default function ItemDetail() {
 
   const { itemID } = useParams();
@@ -14,7 +16,7 @@ export default function ItemDetail() {
   useEffect(() => {
     const fetchItemById = async () => {
         try {
-            const res = await axios.get(`https://student-store-codepath.herokuapp.com/items/list/${itemID}`);
+            const res = await axios.get(`${URL}/items/list/${itemID}`);
             if (res?.data?.item) {
                 setItem(res.data.item);
             }

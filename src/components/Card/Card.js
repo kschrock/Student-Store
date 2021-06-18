@@ -32,9 +32,15 @@ const useStyles = makeStyles({
 });
 
 
-export default function OutlinedCard({id, name, category, price, image, description}) {
+export default function OutlinedCard({add, id, name, category, price, image, description}) {
   const classes = useStyles();
-  
+
+  const handler = () => {
+    //pass down
+    add(id)
+    //console.log(id)
+}
+
   return (
       
     <Card className="card" variant="outlined">
@@ -54,7 +60,7 @@ export default function OutlinedCard({id, name, category, price, image, descript
       </CardContent>
       </CardActionArea>
       <CardActions>
-      <Button variant="contained" color="primary"size="small"
+      <Button  onClick={() => { handler() }} variant="contained" color="primary"size="small"
       >Add to Cart 
       <AddShoppingCartIcon />
       </Button>

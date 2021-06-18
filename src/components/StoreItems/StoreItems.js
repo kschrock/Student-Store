@@ -12,7 +12,7 @@ const useStyles = makeStyles({
   }
 });
 
-export default function StoreItems({ items }){
+export default function StoreItems({ test, items, add }){
     
     const classes = useStyles();
     return (
@@ -27,11 +27,13 @@ export default function StoreItems({ items }){
           <Grid item xs={12} sm={6} md={4} key={itemData.id}>
           <Card 
           key={itemData.id}
+          add={add}
           description={itemData.description}
           image={itemData.image}
           price={itemData.price}
           category={itemData.category}
-          id={itemData.id} name={itemData.name}/>
+          id={itemData.id} 
+          name={itemData.name}/>
         </Grid>
         ))}
     </Grid>
