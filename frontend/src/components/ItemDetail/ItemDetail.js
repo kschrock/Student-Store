@@ -3,7 +3,7 @@ import axios from "axios"
 import { useEffect, useState  } from "react"
 import { useParams } from "react-router"
 import "./ItemDetail.css"
-
+import { formatAmount } from "../../utils/format"
 export default function ItemDetail() {
 
   const { itemID } = useParams();
@@ -40,7 +40,7 @@ export default function ItemDetail() {
       <>
         <p className="description">{item?.description}</p>
         <div className="meta">
-          <p >{item?.price}</p>
+          <p >{formatAmount(item?.price)}</p>
         </div>
       </>
     )
@@ -50,7 +50,10 @@ export default function ItemDetail() {
     <div className="ItemDetail">
       <div className="card">
         <div className="title">
-          {/* <h3>Transaction #{transactionId}</h3> */}
+          <h3>{item?.name}</h3>
+          <div id = "container">
+          <img src={item?.image} alt={item?.name} />
+          </div>
           <p className="category"></p>
         </div>
 
