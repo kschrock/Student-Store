@@ -50,5 +50,14 @@
       "price": 1,
       "quantity": 100
     }
+  ],
+  "cart": [
+    {
+      "itemId": 1,
+      "id": 1,
+      "name": "Rice Krispies",
+      "price": 0.99,
+      "quantity": 14
+    }
   ]
 }
