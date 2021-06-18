@@ -4,6 +4,7 @@ import axios from "axios"
 import Navbar from "../Navbar/Navbar"
 import Home from "../Home/Home"
 import ItemDetail from "../ItemDetail/ItemDetail"
+import Checkout from "../Checkout/Checkout"
 import "./App.css"
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home items={items}/>} />
           <Route path="/item/:itemID" element={<ItemDetail />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
     </div>
