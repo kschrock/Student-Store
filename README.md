@@ -9,9 +9,6 @@ Deployed Application (optional): [Student Store Deployed Site](https://guttural-
 
 ### Application Features
 
-![](https://media.giphy.com/media/wJTe6Qe1pEK8zYnmCX/giphy.gif)
-**Main Page w/ main card layout/functions**
-
 #### CORE FEATURES
 
 - [X] The API should contain an endpoint that serves an array of all products in the store
@@ -32,9 +29,9 @@ Deployed Application (optional): [Student Store Deployed Site](https://guttural-
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
+![](https://media.giphy.com/media/wJTe6Qe1pEK8zYnmCX/giphy.gif)
+**Main Page w/ main card layout/functions**
 
-`ADD_EMBEDDED_CODE_HERE`
 
 ### Reflection
 
