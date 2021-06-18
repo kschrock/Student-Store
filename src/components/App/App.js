@@ -13,9 +13,11 @@ export default function App() {
    const [items, setItems] = useState([]);
   // const [transfers, setTransfers] = useState([]);
   useEffect(() => {
+    console.log("https://student-store-codepath.herokuapp.com/items/list")
     const fetchData = async () => {
        setIsFetching(true)
        const res = await axios.get(`https://student-store-codepath.herokuapp.com/items/list`);
+       console.log(res)
       if (res?.data?.items) {
         setItems(res.data.items);
         //get the list of items
