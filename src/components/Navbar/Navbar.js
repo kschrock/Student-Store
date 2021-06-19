@@ -5,7 +5,7 @@ import avatar from "../../assets/avatar.png"
 import "./Navbar.css"
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
 
-export default function Navbar() {
+export default function Navbar({cartNumber}) {
   return ( 
      
     <nav className="Navbar">
@@ -21,7 +21,7 @@ export default function Navbar() {
           <i className="material-icons md-36">Welcome</i>
       </div>
       <div>
-      <ShoppingCart />
+      <ShoppingCart cartNumber={cartNumber}/>
       </div>
     </nav>
     

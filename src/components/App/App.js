@@ -6,6 +6,7 @@ import Home from "../Home/Home"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import Checkout from "../Checkout/Checkout"
 import "./App.css"
+import { set } from "harmony-reflect"
 
 export const URL = process.env.REACT_APP_REMOTE_HOST_URL || "http://localhost:3001"
 
@@ -14,6 +15,7 @@ export default function App() {
    const [isFetching, setIsFetching] = useState(false);
    const [items, setItems] = useState([]);
    const [cart, setCart] = useState([]);
+   const [cartNumber, setCartNumber] = useState(0);
 
   useEffect(() => {
 
@@ -21,6 +23,7 @@ export default function App() {
        setIsFetching(true)
        const res = await axios.get(`${URL}/items/list`);
        //console.log(res)
+       updateCart()
       if (res?.data?.items) {
         setItems(res.data.items);
         //get the list of items
@@ -33,8 +36,21 @@ export default function App() {
 
   const sendData = async (id) => {
     await axios.post(`${URL}/items/addToCart/${id}/1`);
+    updateCart()
    }
-   
+
+  const updateCart = async () => {
+    const res = await axios.get(`${URL}/items/cart/list`);
+    const res2 = await axios.get(`${URL}/items/cart/count`);
+    if (res?.data?.items) {
+      setCart(res.data.items);
+      //get the list of items
+      //console.log(cartNumber)
+    }
+    setCartNumber(res2.data.count)
+
+    //console.log(cart.data)
+  }
 
   const test = (data) => {
       //pass down
@@ -43,14 +59,18 @@ export default function App() {
 
   const add = (data) => {
     //pass down
-    console.log("Hello world : " + data)
+    //console.log("Hello world : " + data)
     sendData(data)
 }
+
+
+
+
 
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
+        <Navbar cartNumber={cartNumber}/>
 
         <Routes>
           <Route path="/" element={<Home 

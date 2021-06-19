@@ -4,11 +4,11 @@ import "./Home.css"
 import StoreItems from "../StoreItems/StoreItems"
 
 
-export default function Home({items , test, add}) {
-  const handler = () => {
-    //pass down
-   test("Made it here.")
-}
+export default function Home({items, test, add}) {
+//   const handler = () => {
+//     //pass down
+//    test("Made it here.")
+// }
 
   return (
     <div className="Home">

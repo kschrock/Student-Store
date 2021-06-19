@@ -32,6 +32,12 @@ Deployed Application (optional): [Student Store Deployed Site](https://guttural-
 ![](https://media.giphy.com/media/wJTe6Qe1pEK8zYnmCX/giphy.gif)
 **Main Page w/ main card layout/functions**
 
+![](https://media.giphy.com/media/f4WCOGZcMOfyMBevT6/giphy.gif)
+**Shopping Cart adding Items from button click (top right corner)**
+
+![](https://media.giphy.com/media/7NKPN6bo7BPwEwa1eK/giphy.gif)
+**Backend Logic for cart and items (GET, POST, DELETE)**
+
 
 ### Reflection
 
