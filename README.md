@@ -5,7 +5,7 @@ Submitted by: **Kordell Schrock**
 
 Estimated time spent: **18** hours spent in total
 
-Deployed Application (optional): [Student Store Deployed Site](https://guttural-copy.surge.sh/)
+Deployed Application (optional): [Student Store Deployed Site](https://codepath-student-store.surge.sh/)
 
 ### Application Features
 
