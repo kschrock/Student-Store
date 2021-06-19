@@ -14,19 +14,27 @@ export default function App() {
 
    const [isFetching, setIsFetching] = useState(false);
    const [items, setItems] = useState([]);
-   const [cart, setCart] = useState([]);
    const [cartNumber, setCartNumber] = useState(0);
+   const [data, setData] = useState([]);
+
+   const updateCart = async () => {
+    const res = await axios.get(`${URL}/items/cart/list`);
+    const res2 = await axios.get(`${URL}/items/cart/count`);
+    if (res?.data?.items) {
+      setData(res.data.items);
+    }
+    setCartNumber(res2.data.count)
+  }
+
 
   useEffect(() => {
 
     const fetchData = async () => {
        setIsFetching(true)
-       const res = await axios.get(`${URL}/items/list`);
-       //console.log(res)
        updateCart()
+       const res = await axios.get(`${URL}/items/list`);
       if (res?.data?.items) {
         setItems(res.data.items);
-        //get the list of items
       }
        setIsFetching(false)
     }
@@ -39,18 +47,15 @@ export default function App() {
     updateCart()
    }
 
-  const updateCart = async () => {
+   const updateData = async () => {
     const res = await axios.get(`${URL}/items/cart/list`);
-    const res2 = await axios.get(`${URL}/items/cart/count`);
     if (res?.data?.items) {
-      setCart(res.data.items);
+      setData(res.data.items);
+      //console.log(res.data.items)
       //get the list of items
-      //console.log(cartNumber)
     }
-    setCartNumber(res2.data.count)
+   }
 
-    //console.log(cart.data)
-  }
 
   const test = (data) => {
       //pass down
@@ -64,13 +69,10 @@ export default function App() {
 }
 
 
-
-
-
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar cartNumber={cartNumber}/>
+        <Navbar cartNumber={cartNumber} data={data}/>
 
         <Routes>
           <Route path="/" element={<Home 
@@ -78,7 +80,8 @@ export default function App() {
           test={test}
           items={items}/>} />
           <Route path="/item/:itemID" element={<ItemDetail />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/checkout" element={<Checkout
+          data={data} />} />
         </Routes>
       </BrowserRouter>
     </div>

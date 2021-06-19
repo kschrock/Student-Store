@@ -23,7 +23,7 @@ Deployed Application (optional): [Student Store Deployed Site](https://codepath-
 - [ ] There should be a `Sidebar` component that appears on every page and has two states - `open` and `closed`. When the sidebar is opened, it should display a shopping cart of all the products the user currently has in their cart. It should also calculate and display the total amount in dollars for the checked-out items. When it's closed, the sidebar should be much thinner and not display its internal content.
 - [ ] A checkout form should be available that allows the user to enter their email and send their order to the API.
 - [ ] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
-- [ ] Create an endpoint that serves only a single product based on the product's id
+- [x] Create an endpoint that serves only a single product based on the product's id
 - [ ] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
 - [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
 
@@ -34,6 +34,9 @@ Deployed Application (optional): [Student Store Deployed Site](https://codepath-
 
 ![](https://media.giphy.com/media/f4WCOGZcMOfyMBevT6/giphy.gif)
 **Shopping Cart adding Items from button click (top right corner)**
+
+![](https://media.giphy.com/media/lJdT4D1y7tJsRHOUeC/giphy.gif)
+**Adding To Cart and showing cart**
 
 ![](https://media.giphy.com/media/7NKPN6bo7BPwEwa1eK/giphy.gif)
 **Backend Logic for cart and items (GET, POST, DELETE)**

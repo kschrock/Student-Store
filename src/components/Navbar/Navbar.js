@@ -6,6 +6,8 @@ import "./Navbar.css"
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
 
 export default function Navbar({cartNumber}) {
+
+
   return ( 
      
     <nav className="Navbar">
