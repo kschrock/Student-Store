@@ -35,8 +35,8 @@ Deployed Application (optional): [Student Store Deployed Site](https://codepath-
 ![](https://media.giphy.com/media/f4WCOGZcMOfyMBevT6/giphy.gif)
 **Shopping Cart adding Items from button click (top right corner)**
 
-![](https://media.giphy.com/media/lJdT4D1y7tJsRHOUeC/giphy.gif)
-**Adding To Cart and showing cart**
+![](https://media.giphy.com/media/P4sz7AUdSYbTSIGIOg/giphy.gif)
+**Showing cart**
 
 ![](https://media.giphy.com/media/7NKPN6bo7BPwEwa1eK/giphy.gif)
 **Backend Logic for cart and items (GET, POST, DELETE)**
